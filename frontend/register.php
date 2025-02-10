@@ -12,9 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../public/css/styles.css">
     <title>Registro de Usuario</title>
-    <style>
-        .error { color: red; border: 1px solid red; padding: 10px; margin-bottom: 15px; }
-    </style>
+  
 </head>
    
 <body>
@@ -39,15 +37,7 @@
     <button type="submit"  class="btn btn-primary w100">Register</button>
 </form>
 </div>
-<?php if (!empty($errors)): ?>
-    <div class="error">
-        <ul>
-            <?php foreach ($errors as $error): ?>
-                <li><?= $error ?></li>
-            <?php endforeach; ?>
-        </ul>
-    </div>
-<?php endif; ?>
+
 </div>
 </main>
 </body>
