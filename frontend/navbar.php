@@ -30,10 +30,12 @@
                         </li>';
                     }
                 ?>
-                
-                
-                
+
             </ul>
+            <!-- <form class="d-flex" action="search.php" method="GET">
+                <input class="form-control me-2" type="search" name="query" placeholder="Buscar películas..." aria-label="Buscar">
+                <button class="btn btn-outline-light" type="submit">Buscar</button>
+            </form> -->
         </div>
         <div class="user-logged">Hola <span class="text-capitalize"><?= isset($_SESSION['username'])?$_SESSION["username"]:"User"; ?></span></div>
     </div>

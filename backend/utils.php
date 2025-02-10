@@ -26,4 +26,5 @@ function validateAndHashPassword($input_pass){
     return $hashedPassword;
 
 }
+
 ?>

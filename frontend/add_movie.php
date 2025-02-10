@@ -1,8 +1,6 @@
 <?php
 session_start();
-
 require '../backend/add_movie.php';
-
 ?>
 
 <!DOCTYPE html>

@@ -1,20 +1,18 @@
 <?php
-session_start();
-include 'db.php';
+    session_start();
+    include 'db.php';
 
-if (!isset($_SESSION['user_id'])) {
-    echo "Sesión no iniciada. Redirigiendo a login...";
-    header("refresh:3;url=login.php"); 
-    exit();
-}
+    if (!isset($_SESSION['user_id'])) {
+        echo "Sesión no iniciada. Redirigiendo a login...";
+        header("refresh:3;url=login.php"); 
+        exit();
+    }
 
-//echo "Usuario logueado, ID: " . $_SESSION['user_id'];
+    //echo "Usuario logueado, ID: " . $_SESSION['user_id'];
 
+    $user_id = $_SESSION['user_id'];
 
-$user_id = $_SESSION['user_id'];
-
-if ( $_SERVER["REQUEST_METHOD"] === "POST" ) {
-
+    if ( $_SERVER["REQUEST_METHOD"] === "POST" ) {
         $title = $_POST['title'];
         $year = $_POST['year'];
         $genre = $_POST['genre'];
@@ -35,10 +33,8 @@ if ( $_SERVER["REQUEST_METHOD"] === "POST" ) {
         } else {
             echo "Error al añadir la película.";
         }
-    
+
         $stmt->close();
     }
     
-    
-
 ?>

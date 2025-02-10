@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->bind_param("sissisii", $title, $year, $genre, $description, $rating, $poster, $movie_id, $user_id);
 
     if ($stmt->execute()) {
-        header("Location: user.php");
+        header("Location: ../frontend/user.php");
         exit();
     } else {
         echo "Error al actualizar la película.";
