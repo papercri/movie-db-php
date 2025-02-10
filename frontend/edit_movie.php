@@ -1,8 +1,6 @@
 <?php
 session_start();
-
 require '../backend/edit_movie.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -31,6 +29,18 @@ require '../backend/edit_movie.php';
             <div class="form-group">
                 <label class="form-label">Género</label>
                 <input type="text" name="genre" class="form-control" value="<?= $movie['genre'] ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="director">Director:</label>
+                <input type="text" id="director" name="director" class="form-control"  value="<?= $movie['director'] ?>">
+            </div>
+            <div class="form-group">
+                <label for="actors">Actores:</label>
+                <input type="text" id="actors" name="actors" class="form-control" value="<?= $movie['actors'] ?>">
+            </div>
+            <div class="form-group">
+                <label for="country">País:</label>
+                <input type="text" id="country" name="country" class="form-control" value="<?= $movie['country'] ?>">
             </div>
             <div class="form-group">
                 <label class="form-label">Descripción</label>

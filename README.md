@@ -54,6 +54,9 @@ CREATE TABLE movies (
     description TEXT NOT NULL,
     rating FLOAT NOT NULL CHECK (rating >= 0 AND rating <= 10),
     poster VARCHAR(255) NOT NULL,
+    director varchar(255) DEFAULT NULL,
+    actors text DEFAULT NULL,
+    country varchar(100) DEFAULT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 ```

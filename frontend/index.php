@@ -17,7 +17,7 @@ session_start();
     <main>
     <div class="container ">
         <h1>Todas las peliculas</h1>
-        <!-- Fila de tarjetas de películas -->
+    
         <div class="show-movies">
             <?php foreach ($movies as $movie): ?>
       
@@ -37,28 +37,7 @@ session_start();
 
             <!-- Modal Details -->
 
-            <div class="modal fade" id="movieModal<?= $movie['id'] ?>" tabindex="-1" aria-labelledby="modalLabel<?= $movie['id'] ?>" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="modalLabel<?= $movie['id'] ?>"><?= $movie['title'] ?> (<?= $movie['year'] ?>)</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                            </div>
-                            <div class="modal-body film">
-                                <img src="<?= $movie['poster'] ?>" class="img-fluid mb-3" alt="<?= $movie['title'] ?>">
-                                <div class="details">
-                                    <p><strong>Género:</strong> <?= $movie['genre'] ?></p>
-                                    <p><strong>Descripción:</strong> <?= $movie['description'] ?></p>
-                                    <p><strong>Rating:</strong>  <?= generateStars($movie['rating']) ?></p>
-                                </div>
-                                
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <?php include 'movie_modal.php' ?>
             <?php endforeach; ?>
         </div>
     </div>

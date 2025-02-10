@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">Inicio</a>
+                    <a class="nav-link" href="index.php">Home</a>
                 </li>
                 <?php if(isset($_SESSION['username'] )){
                     echo '<li class="nav-item">
@@ -30,13 +30,17 @@
                         </li>';
                     }
                 ?>
+                <!-- Search Form -->
+                <form action="search.php" method="GET" class="search-form">
+                    <div class="input-group">
+                        <input type="text" name="title" placeholder="Buscar película..." class="form-search">
+                        <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </form>
 
             </ul>
-            <!-- <form class="d-flex" action="search.php" method="GET">
-                <input class="form-control me-2" type="search" name="query" placeholder="Buscar películas..." aria-label="Buscar">
-                <button class="btn btn-outline-light" type="submit">Buscar</button>
-            </form> -->
         </div>
+        <!-- Hola Usuario -->
         <div class="user-logged">Hola <span class="text-capitalize"><?= isset($_SESSION['username'])?$_SESSION["username"]:"User"; ?></span></div>
     </div>
 </nav>

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include 'db.php';
+    require("db.php");
 
     // Verificar si el usuario está logueado
     if (!isset($_SESSION['user_id'])) {
@@ -11,7 +11,9 @@
     $user_id = $_SESSION['user_id'];
 
     // Obtener películas del usuario logueado
-    $sql = "SELECT * FROM movies WHERE user_id = ?";
+    $sql = "SELECT u.username, m.* FROM movies m 
+            JOIN users u ON m.user_id = u.id
+            WHERE m.user_id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $user_id);
     $stmt->execute();
@@ -19,7 +21,7 @@
     $movies = $result->fetch_all(MYSQLI_ASSOC);
 
     function generateStars($rating) {
-        $starsCount = round($rating / 2); // Convierte de 1-10 a 1-5 estrellas
+        $starsCount = round($rating / 2); 
         return str_repeat('<i class="fas fa-star text-warning"></i>', $starsCount) .
             str_repeat('<i class="far fa-star text-warning"></i>', 5 - $starsCount);
     }

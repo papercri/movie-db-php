@@ -43,7 +43,18 @@ require '../backend/add_movie.php';
                 <label for="genre">Género:</label>
                 <input type="text" id="genre" name="genre" class="form-control" required>
             </div>
-            
+            <div class="form-group">
+                <label for="director">Director:</label>
+                <input type="text" id="director" name="director" class="form-control" >
+            </div>
+            <div class="form-group">
+                <label for="actors">Actores:</label>
+                <input type="text" id="actors" name="actors" class="form-control" >
+            </div>
+            <div class="form-group">
+                <label for="country">País:</label>
+                <input type="text" id="country" name="country" class="form-control" >
+            </div>
             <div class="form-group">
                 <label for="description">Descripción:</label>
                 <textarea id="description" name="description" class="form-control" required></textarea>

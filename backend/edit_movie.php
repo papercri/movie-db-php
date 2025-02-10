@@ -1,7 +1,7 @@
 <?php
 session_start();
-require 'db.php';
-require "utils.php";
+require("db.php");
+require("utils.php");
 
 // Verificar si el usuario está logueado
 if (!isset($_SESSION['user_id'])) {
@@ -41,10 +41,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $rating = $_POST['rating'];
     $user_id = $_SESSION["user_id"]; 
     $poster = validateTextInput($_POST['poster']);
+    $director = validateTextInput($_POST['director']);
+    $actors = validateTextInput($_POST['actors']);
+    $country = validateTextInput($_POST['country']);
 
-    $sql = "UPDATE movies SET title=?, year=?, genre=?, description=?, rating=?, poster=? WHERE id=? AND user_id=?";
+    $sql = "UPDATE movies SET title=?, year=?, genre=?, description=?, rating=?, director=?, actors=?, country=?, poster=? WHERE id=? AND user_id=?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sissisii", $title, $year, $genre, $description, $rating, $poster, $movie_id, $user_id);
+    $stmt->bind_param("sissisiisss", $title, $year, $genre, $description, $rating, $poster, $movie_id, $user_id, $director, $actors, $country);
 
     if ($stmt->execute()) {
         header("Location: ../frontend/user.php");
