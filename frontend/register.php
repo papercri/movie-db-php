@@ -19,9 +19,11 @@
    
 <body>
 <?php include 'navbar.php'; ?>
+<main>
+<div class="container ">
 <h1>Add User</h1>
-
-<form method="POST" action="">
+<div class="form-container">
+<form method="POST" action="" >
 
     <label for="username">User Name</label>
     <input type="text" id="username" name="username" value="<?= htmlspecialchars($userName) ?>">
@@ -34,8 +36,9 @@
     <input type="password" id="password" name="password">
     <br>
     
-    <input type="submit" name="submit" value="Register">
+    <button type="submit"  class="btn btn-primary w100">Register</button>
 </form>
+</div>
 <?php if (!empty($errors)): ?>
     <div class="error">
         <ul>
@@ -45,5 +48,7 @@
         </ul>
     </div>
 <?php endif; ?>
+</div>
+</main>
 </body>
 </html>

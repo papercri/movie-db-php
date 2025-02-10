@@ -17,9 +17,9 @@ require '../backend/edit_movie.php';
 <body>
 <?php include 'navbar.php'; ?>
     <main>  
-    <div class="container add-movie">
+    <div class="container form-container">
         <h1>Editar Película</h1>
-        <form method="POST">
+        <form method="POST" class="w80">
             <div class="form-group">
                 <label class="form-label">Título</label>
                 <input type="text" name="title" class="form-control" value="<?= $movie['title'] ?>" required>

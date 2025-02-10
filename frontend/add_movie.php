@@ -16,7 +16,7 @@ require '../backend/add_movie.php';
 <body>
     <?php include 'navbar.php'; ?>
     <main>
-    <div class="container add-movie">
+    <div class="container form-container ">
         <h1>Añadir pelicula</h1>
         <?php
         if (isset($_SESSION['message'])) {
@@ -28,7 +28,7 @@ require '../backend/add_movie.php';
             unset($_SESSION['error']);
         }
         ?>
-        <form action="" method="POST">
+        <form action="" method="POST" class="w80">
             <div class="form-group">
                 <label for="title">Título de la Película:</label>
                 <input type="text" id="title" name="title" class="form-control" required>
@@ -59,7 +59,8 @@ require '../backend/add_movie.php';
                 <input type="text" id="poster" name="poster" class="form-control" >
             </div>
             <div class="form-group ">
-                <button type="submit" name="submit" class="btn btn-primary w100">Añadir Película</button>
+                <button type="submit" name="submit" class="btn btn-primary 
+                ">Añadir Película</button>
             </div>
         </form>
         </div>

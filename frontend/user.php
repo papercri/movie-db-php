@@ -21,7 +21,7 @@ require '../backend/user_movies.php';
         <h1>Mis Películas</h1>
         <div class="show-movies">
             <?php foreach ($movies as $movie): ?>
-                <div class="col col-md-4 col-12">
+       
                     <div class="movie-card">
                         <img src="<?= $movie['poster'] ?>" class="card-img-top" alt="<?= $movie['title'] ?>">
                         <div class="card-body">
@@ -35,7 +35,7 @@ require '../backend/user_movies.php';
                             <a href="../backend/delete_movie.php?id=<?= $movie['id'] ?>" class="btn btn-danger" onclick="return confirm('¿Seguro que quieres eliminar esta película?');">Eliminar</a>
                         </div>
                     </div>
-                </div>
+          
 
                 <!-- Modal Details -->
 

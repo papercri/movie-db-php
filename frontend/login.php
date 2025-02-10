@@ -14,8 +14,11 @@ require '../backend/login.php';
 </head>
 <body>
 <?php include 'navbar.php'; ?>
-    <div class="login-container">
-        <h1>Iniciar Sesión</h1>
+    <main>
+    <div class="container ">
+    <h1>Iniciar Sesión</h1>
+    <div class="form-container">
+        
         <form action="../backend/login.php" method="POST">
             <label for="username">User name</label>
             <input type="text" id="username" name="username" required>
@@ -23,8 +26,10 @@ require '../backend/login.php';
             <label for="password">Contraseña</label>
             <input type="password" id="password" name="password" required>
             
-            <button type="submit">Entrar</button>
+            <button type="submit" class="btn btn-primary w100">Entrar</button>
         </form>
     </div>
+    </div>
+    </main>
 </body>
 </html>

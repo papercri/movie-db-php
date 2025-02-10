@@ -20,7 +20,7 @@ session_start();
         <!-- Fila de tarjetas de películas -->
         <div class="show-movies">
             <?php foreach ($movies as $movie): ?>
-                <div class="col col-md-4 col-12">
+      
                     <!-- Tarjeta de película -->
                     <div class="movie-card">
                         <img src=<?=$movie['poster'] ?> class="card-img-top" alt="<?= $movie['title'] ?>">
@@ -33,7 +33,7 @@ session_start();
                             </button>
                         </div>
                     </div>
-                </div>
+               
 
             <!-- Modal Details -->
 

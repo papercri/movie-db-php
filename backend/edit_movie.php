@@ -1,6 +1,7 @@
 <?php
 session_start();
-include 'db.php';
+require 'db.php';
+require "utils.php";
 
 // Verificar si el usuario está logueado
 if (!isset($_SESSION['user_id'])) {
@@ -33,12 +34,13 @@ if (!$movie) {
 
 // Si el formulario se envió, actualizar la película
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $title = $_POST['title'];
+    $title = validateTextInput($_POST['title']);
     $year = $_POST['year'];
-    $genre = $_POST['genre'];
-    $description = $_POST['description'];
+    $genre = validateTextInput($_POST['genre']);
+    $description = validateTextInput($_POST['description']);
     $rating = $_POST['rating'];
-    $poster = $_POST['poster'];
+    $user_id = $_SESSION["user_id"]; 
+    $poster = validateTextInput($_POST['poster']);
 
     $sql = "UPDATE movies SET title=?, year=?, genre=?, description=?, rating=?, poster=? WHERE id=? AND user_id=?";
     $stmt = $conn->prepare($sql);
