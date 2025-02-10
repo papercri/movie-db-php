@@ -27,7 +27,7 @@ while ($row = $result->fetch_assoc()) {
                 <div class="col-md-4 mb-3">
                     <!-- Tarjeta de película -->
                     <div class="movie-card">
-                        <img src="../public/images/<?= $movie['image'] ?>" class="card-img-top" alt="<?= $movie['title'] ?>">
+                        <img src=<?=$movie['poster'] ?> class="card-img-top" alt="<?= $movie['title'] ?>">
                         <div class="info">
                             <h3><?= $movie['title'] ?> (<?= $movie['year'] ?>)</h3>
                             <p><?= $movie['description'] ?></p>

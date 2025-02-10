@@ -1,35 +1,44 @@
 <?php
+session_start();
 include 'db.php';
 
-$user_id = $_GET['id'];
+if (!isset($_SESSION['user_id'])) {
+    echo "Sesión no iniciada. Redirigiendo a login...";
+    header("refresh:3;url=login.php"); // Redirige después de 3 segundos
+    exit();
+}
 
-if (isset($_POST['submit'])) {
-    $title = $_POST['title'];
-    $year = $_POST['year'];
-    $genre = $_POST['genre'];
-    $description = $_POST['description'];
-    $rating = $_POST['rating'];
+echo "Usuario logueado, ID: " . $_SESSION['user_id'];
 
-    // Manejo de la imagen (poster)
-    $poster_name = $_FILES['poster']['name'];
-    $poster_tmp = $_FILES['poster']['tmp_name'];
-    $poster_path = '../public/images/' . basename($poster_name);
-    move_uploaded_file($poster_tmp, $poster_path);
 
-    // Inserta la película en la base de datos
-    $sql = "INSERT INTO movies (user_id, title, year, genre, description, rating, poster) 
+$user_id = $_SESSION['user_id'];
+
+if ( $_SERVER["REQUEST_METHOD"] === "POST" ) {
+
+        $title = $_POST['title'];
+        $year = $_POST['year'];
+        $genre = $_POST['genre'];
+        $description = $_POST['description'];
+        $rating = $_POST['rating'];
+        $user_id = $_SESSION["user_id"]; 
+        $poster = $_POST['poster'];
+
+        $sql = "INSERT INTO movies (user_id, title, year, genre, description, rating, poster) 
             VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
 
-    if ($stmt = $conn->prepare($sql)) {
-        $stmt->bind_param("issssss", $user_id, $title, $year, $genre, $description, $rating, $poster_path);
+        $stmt->bind_param("isissis", $user_id, $title, $year, $genre, $description, $rating, $poster);
+
         if ($stmt->execute()) {
-            echo "Película añadida exitosamente!";
+            header("Location: index.php");
+            exit();
         } else {
             echo "Error al añadir la película.";
         }
+    
         $stmt->close();
-    } else {
-        echo "Error en la preparación de la consulta.";
     }
-}
+    
+    
+
 ?>

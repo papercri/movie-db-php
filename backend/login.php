@@ -26,6 +26,7 @@ if ( $_SERVER["REQUEST_METHOD"] === "POST" ) {
             if ( password_verify($password, $arrayResults["password"]) ) {
 
                 $_SESSION["username"] = $username;
+                $_SESSION["user_id"] = $arrayResults["id"]; 
                 header("Location: ../frontend/index.php");
             }else{
                 echo "El password no es correcto";

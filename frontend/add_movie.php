@@ -4,6 +4,7 @@ session_start();
 require '../backend/add_movie.php';
 
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,7 +19,17 @@ require '../backend/add_movie.php';
 <?php include 'navbar.php'; ?>
     <div class="add-movie">
         <h1>Add movie</h1>
-        <form action="add_movie.php?id=<?php echo $user_id; ?>" method="POST" enctype="multipart/form-data">
+        <?php
+        if (isset($_SESSION['message'])) {
+            echo '<div class="alert alert-success">' . $_SESSION['message'] . '</div>';
+            unset($_SESSION['message']);
+        }
+        if (isset($_SESSION['error'])) {
+            echo '<div class="alert alert-danger">' . $_SESSION['error'] . '</div>';
+            unset($_SESSION['error']);
+        }
+        ?>
+        <form action="" method="POST">
         <div class="form-group">
             <label for="title">Título de la Película:</label>
             <input type="text" id="title" name="title" class="form-control" required>
@@ -46,7 +57,7 @@ require '../backend/add_movie.php';
         
         <div class="form-group">
             <label for="poster">Imagen (Poster):</label>
-            <input type="file" id="poster" name="poster" class="form-control" required>
+            <input type="text" id="poster" name="poster" class="form-control" >
         </div>
         
         <button type="submit" name="submit" class="btn btn-primary mt-3">Añadir Película</button>
