@@ -45,11 +45,13 @@
     grid-template-columns: repeat(3, 1fr);
     display:grid;
     gap: 20px;
+  
   }
 
   .card-img-top{
     margin-bottom:10px
   }
+  
   .card-body .buttons{
     display: flex;
     gap: 10px;
@@ -224,8 +226,9 @@
     }
     main .show-movies{
       grid-template-columns: repeat(1, 1fr);
-     max-width:350px;
+      max-width:350px;
       gap: 20px;
+     
     }
     nav a {
       margin: 5px 0;

@@ -2,7 +2,7 @@
 require("db.php");
 require("utils.php");
 session_start();
- 
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if (!empty($_POST["username"]) && !empty($_POST["email"]) && !empty($_POST["password"])) {

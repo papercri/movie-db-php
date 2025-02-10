@@ -1,7 +1,8 @@
 <?php
     session_start();
     require("db.php");
-
+    require("utils.php");
+    
     // Verificar si el usuario está logueado
     if (!isset($_SESSION['user_id'])) {
         header("Location: ../frontend/login.php");
@@ -20,11 +21,7 @@
     $result = $stmt->get_result();
     $movies = $result->fetch_all(MYSQLI_ASSOC);
 
-    function generateStars($rating) {
-        $starsCount = round($rating / 2); 
-        return str_repeat('<i class="fas fa-star text-warning"></i>', $starsCount) .
-            str_repeat('<i class="far fa-star text-warning"></i>', 5 - $starsCount);
-    }
+    
 ?>
 
-</html>
+

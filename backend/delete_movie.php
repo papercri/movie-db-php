@@ -1,7 +1,8 @@
 <?php
     session_start();
     require("db.php");
-
+    require("utils.php");
+    
     if (!isset($_SESSION['user_id'])) {
         header("Location: ../frontend/login.php");
         exit();
