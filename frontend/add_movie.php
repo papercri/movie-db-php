@@ -51,8 +51,8 @@ require '../backend/add_movie.php';
         </div>
         
         <div class="form-group">
-            <label for="rating">Calificación (0-10):</label>
-            <input type="number" id="rating" name="rating" class="form-control" min="0" max="10" required>
+            <label for="rating">Calificación (0-5):</label>
+            <input type="number" id="rating" name="rating" class="form-control" min="0" max="5" required>
         </div>
         
         <div class="form-group">

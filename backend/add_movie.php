@@ -4,11 +4,11 @@ include 'db.php';
 
 if (!isset($_SESSION['user_id'])) {
     echo "Sesión no iniciada. Redirigiendo a login...";
-    header("refresh:3;url=login.php"); // Redirige después de 3 segundos
+    header("refresh:3;url=login.php"); 
     exit();
 }
 
-echo "Usuario logueado, ID: " . $_SESSION['user_id'];
+//echo "Usuario logueado, ID: " . $_SESSION['user_id'];
 
 
 $user_id = $_SESSION['user_id'];
