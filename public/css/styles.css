@@ -26,7 +26,8 @@
   main .order-select{
     display: flex;
     column-gap: 30px;
-    padding-top: 20px;
+    padding-top: 5px;
+    padding-bottom: 30px;
    }
    main .order-select > div{
     width:150px;
@@ -60,7 +61,9 @@
   .card-img-top{
     margin-bottom:10px
   }
-  
+  .card-title{
+    margin-bottom:10px
+  }
   .card-body .buttons{
     display: flex;
     gap: 10px;

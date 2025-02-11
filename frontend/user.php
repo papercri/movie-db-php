@@ -20,7 +20,7 @@
                         <img src="<?= $movie['poster'] ?>" class="card-img-top" alt="<?= $movie['title'] ?>">
                         <div class="card-body">
                             <h5 class="card-title"><?= $movie['title'] ?> (<?= $movie['year'] ?>)</h5>
-                            <p class="card-text"><?= substr($movie['description'], 0, 100) ?>...</p>
+                           
                             <p class="rating"><?= generateStars($movie['rating']) ?></p>
                             <div class="buttons">
                                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieModal<?= $movie['id'] ?>" title="Ver más" >

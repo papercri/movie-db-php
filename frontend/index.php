@@ -15,6 +15,9 @@
     <?php include 'navbar.php'; ?>
     <main>
         <div class="container ">
+            
+            <h1><?php echo $pageTitle ?></h1>
+
             <!-- Select para ordenar peliculas -->
             <form method="GET" action="" class="">
                 <div class="order-select">
@@ -35,7 +38,7 @@
                     </div>
                 </div>
             </form>
-            <h1><?php echo $pageTitle ?></h1>
+            
             <div class="show-movies">
                 <?php foreach ($movies as $movie): ?>
                 <!-- Card de película -->
