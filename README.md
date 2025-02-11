@@ -92,7 +92,10 @@ php -S localhost:8000
 ```
 http://localhost/movie-db-php/frontend/index.php
 ```
-    ** Se pueden usar usuarios de prueba o crear nuevos a través de la página "Registrate"
+    * Se pueden usar usuarios de prueba o crear nuevos a través de la página "Registrate".
+
+    ** Si se quieren utilizar los datos de default, tendrá que importar la BBDD movie_db.sql en su mysql. 
+
     Los usuarios de prueba son:
 
     User: cris
