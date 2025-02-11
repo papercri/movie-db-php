@@ -3,6 +3,8 @@
     require("../backend/movies.php");
     $pageTitle = "Todas las peliculas";
     $pageDescription = "Todas las peliculas"; 
+    
+
 ?>
 
 <!DOCTYPE html>
