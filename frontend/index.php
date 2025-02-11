@@ -13,12 +13,9 @@
 </head>
 <body>
     <?php include 'navbar.php'; ?>
-
-    <!-- Select para ordenar peliculas -->
-    
-
     <main>
         <div class="container ">
+            <!-- Select para ordenar peliculas -->
             <form method="GET" action="" class="">
                 <div class="order-select">
                     <div>

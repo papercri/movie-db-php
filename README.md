@@ -10,6 +10,7 @@ Este es un proyecto de base de datos de películas desarrollado en PHP y MySQL. 
 - Registro e inicio de sesión de usuarios.
 - Cada usuario puede gestionar sus propias películas.
 - Buscador de películas.
+- Selector para ordenar peliculas por título, año o rating.
 - Ficha detallada por cada película.
 - Diseño responsive basado en Bootstrap y Font Awesome.
 
@@ -17,10 +18,9 @@ Este es un proyecto de base de datos de películas desarrollado en PHP y MySQL. 
 
 ### 1️⃣ Requisitos previos
 
-- Servidor web (Apache recomendado).
-- PHP instalado.
-- MySQL o MariaDB instalado.
-- phpMyAdmin (opcional, para administrar la base de datos más fácilmente).
+- Servidor web (XAMPP).
+- MySQL o MariaDB.
+- phpMyAdmin 
 
 ### 2️⃣ Clonar el repositorio
 
@@ -65,17 +65,16 @@ CREATE TABLE movies (
 
 ```php
 <?php
-$host = "localhost";
-$dbname = "movie_db";
-$username = "tu_usuario";
-$password = "tu_contraseña";
+    $db_server = "localhost";
+    $db_user = "root";
+    $db_pass = "";
+    $db_name = "movie_db";
 
-try {
-    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Error de conexión: " . $e->getMessage());
-}
+    $conn = mysqli_connect($db_server, $db_user, $db_pass, $db_name);
+
+    if(!$conn) {
+        die("Failed to connect to MySQL: " . mysqli_connect_error());
+    };
 ?>
 ```
 
@@ -90,7 +89,7 @@ php -S localhost:8000
 2. Abre tu navegador y accede a:
 
 ```
-http://localhost:8000/
+http://localhost/movie-db-php/frontend/index.php
 ```
 
 ## 🛠 Tecnologías utilizadas
