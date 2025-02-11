@@ -34,6 +34,7 @@
                                 </a>
                             </div>
                         </div>
+  
                     </div>
                     <!-- Modal Details -->
                     <?php include 'movie_modal.php' ?>

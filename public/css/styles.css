@@ -1,8 +1,4 @@
-.input-group {
-    position: relative; 
-    display: flex;
-    margin: 0 20px;
-}  body {
+  body {
       font-family: Arial, sans-serif;
       background-color: #121212;
       color: #e0e0e0;
@@ -22,6 +18,19 @@
   .w100{
     width:100%
   }
+  .input-group {
+    position: relative; 
+    display: flex;
+    margin: 0 20px;
+  }
+  main .order-select{
+    display: flex;
+    column-gap: 30px;
+    padding-top: 20px;
+   }
+   main .order-select > div{
+    width:150px;
+   }
   main .container{
     max-width: 1140px;
     display:flex;
@@ -146,7 +155,7 @@
     text-align: left;
   }
  
-  .form-container input, .form-container textarea  {
+  .form-container input, .form-container textarea .form-container select {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -156,7 +165,7 @@
     color: #e0e0e0;
   }
 
- 
+
 
   .search-form {
     max-width: 220px; 

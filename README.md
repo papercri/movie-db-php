@@ -1,10 +1,10 @@
 # MY Movies Db
 
-# 🎬 Base de Datos de Películas en PHP y MySQL
+#  Base de Datos de Películas en PHP y MySQL
 
 Este es un proyecto de base de datos de películas desarrollado en PHP y MySQL. Permite a los usuarios registrarse, iniciar sesión, agregar, modificar y eliminar películas. El diseño está basado en Bootstrap y Font Awesome con un estilo similar a Filmin.
 
-## 🚀 Características
+##  Características
 
 - Listado de películas con imagen, título, año, género, descripción y rating.
 - Registro e inicio de sesión de usuarios.
@@ -13,7 +13,7 @@ Este es un proyecto de base de datos de películas desarrollado en PHP y MySQL. 
 - Ficha detallada por cada película.
 - Diseño responsive basado en Bootstrap y Font Awesome.
 
-## 📌 Instalación
+##  Instalación
 
 ### 1️⃣ Requisitos previos
 
@@ -52,14 +52,14 @@ CREATE TABLE movies (
     year INT NOT NULL,
     genre VARCHAR(100) NOT NULL,
     description TEXT NOT NULL,
-    rating FLOAT NOT NULL CHECK (rating >= 0 AND rating <= 10),
+    rating FLOAT NOT NULL CHECK (rating >= 0 AND rating <= 5),
     poster VARCHAR(255) NOT NULL,
     director varchar(255) DEFAULT NULL,
     actors text DEFAULT NULL,
     country varchar(100) DEFAULT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
-```
+
 
 2. Configura la conexión a la base de datos en el archivo `config.php`:
 

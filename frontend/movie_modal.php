@@ -26,7 +26,7 @@
                     ?>
                     <p><strong>Descripción:</strong> <?= $movie['description'] ?></p>
                     <p><strong>Rating:</strong>  <?= generateStars($movie['rating']) ?></p>
-                    <p><strong>Subida por:</strong> <span class="text-capitalize"><?php echo htmlspecialchars($movie['username']); ?></span></p>
+                    <p><strong>Añadida por:</strong> <span class="text-capitalize"><?php echo htmlspecialchars($movie['username']); ?></span></p>
                 </div>
                 
             </div>
