@@ -12,6 +12,7 @@ Este es un proyecto de base de datos de películas desarrollado en PHP y MySQL. 
 - Buscador de películas.
 - Selector para ordenar peliculas por título, año o rating.
 - Ficha detallada por cada película.
+- Comprobaciones de seguridad para registro y login.
 - Diseño responsive basado en Bootstrap y Font Awesome.
 
 ##  Instalación
@@ -91,7 +92,14 @@ php -S localhost:8000
 ```
 http://localhost/movie-db-php/frontend/index.php
 ```
+    ** Se pueden usar usuarios de prueba o crear nuevos a través de la página "Registrate"
+    Los usuarios de prueba son:
 
+    User: cris
+    Pw: Aa1111.
+
+    User: Pablo
+    Pw: Aa1111.
 ## Tecnologías utilizadas
 
 - PHP
