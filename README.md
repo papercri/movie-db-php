@@ -92,7 +92,7 @@ php -S localhost:8000
 http://localhost/movie-db-php/frontend/index.php
 ```
 
-## 🛠 Tecnologías utilizadas
+## Tecnologías utilizadas
 
 - PHP
 - MySQL
