@@ -3,6 +3,8 @@
     require("../backend/edit_movie.php");
     $pageTitle = "Editar Película";
     $pageDescription = "Editar Película";
+
+    
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -14,7 +16,7 @@
     <main>  
     <div class="container form-container">
         <h1><?php echo $pageTitle ?></h1>
-        <form method="POST" class="w80">
+        <form method="POST" class="w80" action="">
             <div class="form-group">
                 <label class="form-label">Título</label>
                 <input type="text" name="title" class="form-control" value="<?= $movie['title'] ?>" required>

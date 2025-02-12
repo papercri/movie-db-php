@@ -62,7 +62,7 @@ CREATE TABLE movies (
 );
 
 
-2. Configura la conexión a la base de datos en el archivo `config.php`:
+2. Configura la conexión a la base de datos en el archivo `backend/db.php`:
 
 ```php
 <?php
@@ -81,7 +81,7 @@ CREATE TABLE movies (
 
 ### 4️⃣ Ejecutar el proyecto
 
-1. Inicia el servidor local de PHP:
+1. Inicia el servidor local de Xampp:
 
 ```bash
 php -S localhost:8000

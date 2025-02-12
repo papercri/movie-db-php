@@ -10,7 +10,7 @@
     <?php include 'header.php'; ?>    
 </head>
 <body>
-<?php include 'navbar.php'; ?>
+    <?php include 'navbar.php'; ?>
     <main>
         <div class="container ">
         <?php
@@ -42,11 +42,11 @@
                 }
                 echo "</ul>" ;
             } else {
-                echo "<p>No se encontraron películas con el título '$title'.</p>";
+                echo "<p><br>No se encontraron películas con el título '$title'.</p>";
             }
             }
             else {
-                echo "<p>Por favor, ingrese un título para buscar.</p>";
+                echo "<p><br>Por favor, ingrese un título para buscar.</p>";
             }
         ?>
     

@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $sql = "UPDATE movies SET title=?, year=?, genre=?, description=?, rating=?, director=?, actors=?, country=?, poster=? WHERE id=? AND user_id=?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sissisiisss", $title, $year, $genre, $description, $rating, $poster, $movie_id, $user_id, $director, $actors, $country);
+    $stmt->bind_param("sississssii", $title, $year, $genre, $description, $rating, $director, $actors, $country, $poster, $movie_id, $user_id);
 
     if ($stmt->execute()) {
         header("Location: ../frontend/user.php");
